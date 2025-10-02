@@ -58,6 +58,14 @@
     .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow)}
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
     .reveal.in{opacity:1;transform:none}
+  .input{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:inset 0 1px 0 #fff;transition:border-color .2s ease, box-shadow .2s ease;font-size:16px;color:var(--text)}
+    .input::placeholder{color:rgba(43,33,28,.55)}
+    .input:focus{outline:none;border-color:transparent;box-shadow:0 0 0 3px rgba(193,124,84,.25), inset 0 1px 0 #fff}
+    .contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-form .actions{display:flex;justify-content:flex-end;margin-top:14px}
+    .contact-form .btn{white-space:nowrap}
+    .nav-cta .btn{white-space:nowrap}
+    @media(max-width:760px){.nav-links{display:none}.contact-form .row{grid-template-columns:1fr}.contact-form .actions{justify-content:stretch}.contact-form .btn{width:100%}}
   </style>
 </head>
 <body>
@@ -203,15 +211,18 @@
           <div class="card reveal">
             <h3>Gửi tin nhắn nhanh</h3>
             <form class="contact-form" onsubmit="event.preventDefault(); alert('Đã gửi thông tin!');">
-              <div style='display:grid;gap:12px'>
-                <input class='input' placeholder="Họ và tên" required>
-                <input class='input' type="email" placeholder="Email">
-                <input class='input' type="tel" placeholder="Số điện thoại">
-                <textarea class='input' placeholder="Mục tiêu hoặc nội dung cần hỗ trợ"></textarea>
+              <div class='row'>
+                <input class='input' type='text' placeholder="Họ và tên" autocomplete="name" required>
+                <input class='input' type="tel" placeholder="Số điện thoại" inputmode="tel" autocomplete="tel">
               </div>
-              <div style='margin-top:14px;text-align:right'>
+              <div style='display:grid;gap:12px;margin-top:12px'>
+                <input class='input' type="email" placeholder="Email" autocomplete="email">
+                <textarea class='input' placeholder="Mục tiêu hoặc nội dung cần hỗ trợ" rows="4"></textarea>
+              </div>
+              <div class='actions'>
                 <button class="btn" type="submit">📨 Gửi thông tin</button>
               </div>
+              <p class='lead' style='margin-top:8px;font-size:13px'>Chúng tôi phản hồi trong giờ làm việc. Thông tin của bạn được bảo mật.</p>
             </form>
           </div>
           <div class="card reveal">
