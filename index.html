@@ -97,6 +97,31 @@
     @media (max-width:1020px){
       .hero,.contact{grid-template-columns:1fr}
       .g-3,.g-4{grid-template-columns:1fr}
+      .emotion{grid-template-columns:1fr}
+      h2{font-size:34px}
+    }
+    /* Extra mobile tuning */
+    @media (max-width:640px){
+      html,body{font-size:15px}
+      h1{font-size:22px}
+      h2{font-size:28px}
+      h3{font-size:18px}
+      .container{padding:16px}
+      .panel{padding:16px}
+      .nav{gap:8px}
+      .nav .cta{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;gap:8px}
+      .nav .cta .btn{flex:0 0 auto;scroll-snap-align:start}
+      .btn{padding:12px 14px}
+      .pill{padding:6px 10px}
+      .hero{padding:32px 16px}
+      .emotion{grid-template-columns:1fr}
+      #courses .grid{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+      #courses .course{min-width:80%;scroll-snap-align:center}
+      ul{margin-left:16px}
+      ul li{margin-bottom:6px}
+      .contact{gap:12px}
+    }
+      .g-3,.g-4{grid-template-columns:1fr}
       h2{font-size:34px}
     }
   </style>
